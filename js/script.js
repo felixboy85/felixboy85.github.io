@@ -3,22 +3,27 @@
 const hamburger = document.querySelector('.hamburger'),
       menu = document.querySelector('.menu'),
       closeElem = document.querySelector('.menu__close'),
-      menuLink = document.querySelectorAll('.menu__link-link');
+      menuLink = document.querySelectorAll('.menu__link-link'),
+      bodyElem = document.getElementById('body');
 
 hamburger.addEventListener('click', () => {        
  menu.classList.add('active');
+ bodyElem.classList.add('stop-scrolling');   
 }); 
 
 closeElem.addEventListener('click', () => {
     menu.classList.remove('active');
+    bodyElem.classList.remove('stop-scrolling');
 }); 
 
 menuLink.forEach( (i) => {
     i.addEventListener('click', () => {
         menu.classList.remove('active')
+        bodyElem.classList.remove('stop-scrolling');
     });
 });
-    
+
+
 
 
 /* Skills */
